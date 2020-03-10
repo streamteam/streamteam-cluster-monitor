@@ -51,7 +51,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/protobufjs@6.8.8/dist/protobuf.min.js"></script>
 
 	<!-- StreamTeam Data Model for Kafka page -->
-	<script src="../streamteam-data-model/streamteam-data-model-lib.js"></script>
+	<script src="../streamteam-data-model/streamteam-data-model-lib-1.0.1.js"></script>
 </head>
 
 <body>
