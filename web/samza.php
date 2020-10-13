@@ -86,6 +86,8 @@
 						<tr>
 							<th>Name</th>
 							<th>Id</th>
+							<th>YARN Web UI</th>
+							<th>Application Master UI</th>
 							<th>Started</th>
 							<th>State</th>
 							<th>Kill</th>
@@ -113,7 +115,7 @@
 											echo ' class="bg-warning"';
 											break;
 									}
-									echo '><td>' . $name . '</td><td class="bg-active"><a href="http://' . YarnResourceManager::getIp() . ':8088/cluster/app/' . $id . '">' . $id . '</a></td><td>' . $date . '</td><td>' . $state . '</td><td><button onClick="killApp(\'' . $id . '\')">Kill</button></td></tr>';
+									echo '><td>' . $name . '</td><td>' . $id . '</td><td class="bg-active"><a href="http://' . YarnResourceManager::getIp() . ':8088/cluster/app/' . $id . '">YARN WEB UI</a></td><td class="bg-active"><a href="http://' . YarnResourceManager::getIp() . ':8088/proxy/' . $id . '/#application-master">Application Master UI</a></td><td>' . $date . '</td><td>' . $state . '</td><td><button onClick="killApp(\'' . $id . '\')">Kill</button></td></tr>';
 								}
 							}
 						?>
