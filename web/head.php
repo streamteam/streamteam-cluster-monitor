@@ -51,7 +51,44 @@
 	<script src="https://cdn.jsdelivr.net/npm/protobufjs@6.10.1/dist/protobuf.min.js"></script>
 
 	<!-- StreamTeam Data Model for Kafka page -->
-	<script src="../streamteam-data-model/streamteam-data-model-lib-1.1.0.js"></script>
+	<script src="../streamteam-data-model/streamteam-data-model-lib-1.2.0.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			// http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript/21210643#21210643
+			queryDict = {};
+			location.search.substr(1).split("&").forEach(function (item) {
+				queryDict[item.split("=")[0]] = item.split("=")[1]
+			});
+			if (queryDict.autorefresh == "true") {
+				setTimeout(function () {
+					location.reload();
+				}, 3000);
+
+				$("#autorefresh-checkbox").prop('checked', true);
+
+				$("#autorefresh-checkbox").click(function () {
+					var oldHref = window.location.href;
+					var href = oldHref.replace("\?autorefresh=true\&","?");
+					var href = href.replace("\?autorefresh=true","");
+					window.location.href = href;
+				});
+			} else {
+				$("#autorefresh-checkbox").click(function () {
+					var oldHref = window.location.href;
+					var oldPartsHref = oldHref.split("?");
+					var start = oldPartsHref[0]
+					var end = ""
+					if(oldPartsHref[1] !== undefined) {
+						end = "&" + oldPartsHref[1];
+					}
+					window.location.href = start + "?autorefresh=true" + end;
+				});
+			}
+
+		});
+
+	</script>
 </head>
 
 <body>

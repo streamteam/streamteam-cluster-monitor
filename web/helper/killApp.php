@@ -18,7 +18,7 @@
  */
 
 if (isset($_GET['id'])) {
-		$yarnResourceManagerIp = $_SERVER['SERVER_ADDR']; // 10.34.58.47
+		$yarnResourceManagerIp = $_SERVER['SERVER_ADDR'];
 		if($yarnResourceManagerIp == "::1") {
 				$yarnResourceManagerIp = "127.0.0.1";
 			}

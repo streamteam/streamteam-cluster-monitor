@@ -28,6 +28,10 @@
 	<h1>Samza</h1>
 </div>
 
+<p>
+	Autorefresh <input type="checkbox" id="autorefresh-checkbox" aria-label="Autorefresh checkbox" />
+</p>
+
 <?php
 	$url = "http://" . YarnResourceManager::getIp() . ":8088/ws/v1/cluster/apps";
 	$restResult = RestResult::performRestRequest($url);

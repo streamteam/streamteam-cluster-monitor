@@ -67,6 +67,11 @@
 		?>
 	</ol>
 </div>
+
+<p>
+	Autorefresh <input type="checkbox" id="autorefresh-checkbox" aria-label="Autorefresh checkbox" />
+</p>
+
 <?php
 	$restResult = RestResult::performRestRequest($url);
 
